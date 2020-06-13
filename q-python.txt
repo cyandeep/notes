@@ -1,0 +1,18 @@
+1. 缓存去重和内存去重的区别
+2. python中类的定义 
+	class ***(object) object  class的定义
+	__init__
+	set()
+	self
+3. ***.py中 coding:utf-8 的用处
+4. r.encoding='utf-8'
+5. BeautifulSoup(*,*,from_encoding='utf-8')
+
+
+
+1. 5个模块 
+	url管理器 负责管理url链接，维护已经爬取的url集合和未爬取的url集合，提供获取新url链接的接口
+	html下载器
+	html解析器
+	数据存储器
+	爬虫调度器
