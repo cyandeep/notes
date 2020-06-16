@@ -17,3 +17,14 @@
 ----6.16----
 1.https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB  后面的这是什么
 	为什么复制时，会直接转化
+2. module
+	requests	
+		requests.get(url,headers=headers)
+	import re
+		re.compile(r'/view/\d+\.htm')
+	import urlparse
+		urlparse.urljoin(page_url,new_url)
+	from bs4 import BeautifulSoup
+		soup =BeautifulSoup(html_cont,'html.parser',from_encoding='utf-8')
+	import codecs
+		fout=codecs.open('baike.html','w',encoding='utf-8')
