@@ -36,3 +36,8 @@
 - `RequestToViewNameTranslator`
   - 将请求转换成视图名称
   - `DefaultRequestToViewNameTranslator`
+
+- `MultipartResolver`
+  - 解析多部分请求
+  - `CommonsMultipartResolver`
+- ...

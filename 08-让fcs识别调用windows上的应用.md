@@ -8,5 +8,5 @@
 
 [https://www.cnblogs.com/wxisme/p/5296441.html](https://www.cnblogs.com/wxisme/p/5296441.html)
 
-### 3、dubbo的rmi
+### 3、dubbo的rpc
 
