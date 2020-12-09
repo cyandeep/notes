@@ -2,11 +2,11 @@
 
 #### 继承结构
 
-```txt
+```java
 Servlet
     GenericServlet
     	HttpServlet
-    		HttpServletBean -- 从这开始，由springframework实现
+    		HttpServletBean  //从这开始，由springframework实现
     			FrameworkServlet
     				DispatcherServlet
 ```
@@ -41,12 +41,14 @@ org.springframework.web.servlet.FlashMapManager=org.springframework.web.servlet.
 #### 1.2前端控制器的初始化过程
 
 ```JAVA
-Servlet.init(ServletConfig config)//在servlet实例化之后，由servlet容器调用，用于servlet的初始化
+1.PropertiesLoaderUtils.loadProperties(resource);//加载默认的策略实现 -- 加载DispatcherServlet后
+2.//DispatcherServlet的实例化
+3,Servlet.init(ServletConfig config)//在servlet实例化之后，由servlet容器调用，用于servlet的初始化
 ---
 HttpServletBean.init()//设置bean属性，并调用子类的初始化方法
-    FrameworkServlet.initServletBean()
+    FrameworkServlet.initServletBean()//创建并初始化WebApplicationContext
     	initWebApplicationContext()//创建并初始化WebApplicationContext
-    		createWebApplicationContext(WebApplicationContext parent)//实例化webApplicationContext,要么是xmlWebApplicationContext,要么是定制的context class
+    		createWebApplicationContext(WebApplicationContext parent)//通过反射，调用无参构造器实例化webApplicationContext,默认xmlWebApplicationContext,要么是定制的context class
 ---
     
 ```
@@ -77,6 +79,6 @@ DispatcherServlet.doService(HttpServletRequest request, HttpServletResponse resp
     	getHandler(HttpServletRequest request)//通过handlerMapping获取这个请求的handler
     	getHandlerAdapter(Object handler)//决定当前请求的处理器适配器
     	ha.handle(HttpServletRequest request, HttpServletResponse response, Object handler)//处理请求
-	    render(ModelAndView mv, HttpServletRequest request, HttpServletResponse response)//render
+	    render(ModelAndView mv, HttpServletRequest request, HttpServletResponse response)//渲染视图
 ```
 
