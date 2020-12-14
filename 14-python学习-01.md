@@ -77,13 +77,88 @@ else:
 #### 8.1内置函数
 
 ```txt
-1.type()
+1.type() isinstance(x,(int,float))
 2.print() input()
 3.ord('A') chr(65)
 4.encode('charset') decode('charset',errors='ignore')
 5.len()
 6.format() eg. 'hello {0}'.format('cyan')
 ```
+
+#### 8.2函数别名
+
+```python
+a=abs
+print(a(-33))
+```
+
+#### 8.3自定义函数
+
+定义函数。 分别是 关键字def,函数名，左括号，参数，右括号，冒号
+
+```python
+>>> def myabs(x):
+...     if x>=0:
+...             return x
+...     else:
+...             return -x
+... 
+>>> myabs(4)
+4
+>>> myabs(-4)
+4
+```
+
+#### 8.4返回多个值  --  返回一个tuple
+
+```python
+def return_two_value(x,y):
+    return x,y
+
+x,y=return_two_value(1,2)
+r=return_two_value(1,2)
+type(r)
+```
+
+#### 8.5、函数参数
+
+- 位置参数
+
+- 默认参数
+
+  - def power(x,n=2)
+
+  - 定义默认参数，默认参数必须指向不变对象，否则，每次调用该函数，如果改变了`L`的内容，则下次调用时，默认参数的内容就变了，不再是函数定义时的`[]`了。
+
+    - ```python
+      def add_end(L=[]):
+          L.append('END')
+          return L
+      
+      >>> a()
+      ['END']
+      >>> a()
+      ['END', 'END']
+      ```
+
+- 可变参数
+
+  - 定义 `def f(*args):`
+  - 调用 `f(1,2,3)`  或者   `f(*l)`  --   将l中的所有元素当作可变参数传递
+
+- 关键字参数  --  允许传入0个或者多个含有参数名的参数，在函数的内部转为一个dict
+
+  - 定义 `def f(**args):`
+  - 调用 `f(**d)`
+
+- 命名关键字参数
+
+  - 仅允许传入名字的关键字作为参数，用 * 进行分离
+  - ‵def person(name, age, *, city='Beijing', job):`
+
+- 参数组合
+
+  - 必选参数，默认参数，可变参数，命名关键字参数，关键字参数
 
 ### 9、list 和 tuple   -  有序集合
 
