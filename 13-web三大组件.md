@@ -31,18 +31,22 @@
 
 - 监听web应用中对象和对象属性的变化，并作出处理
 
-- > ```java
+- > ```txt
   > 对象的创建和销毁，
   > 属性的添加、删除、替换
+  > 监听HttpSession对象中的JavaBean的状态的改变.(绑定,解除绑定,钝化和活化)2个
   > 
   > ServletRequestListener
   > ServletRequestAttributeListener
-  >     
+  >  
   > ServletContextListener
   > ServletContextAttributeListener
-  >     
+  >  
   > HttpSessionListener
   > HttpSessionAttributeListener
+>     
+  > HttpSessionBindingListener
+  > HttpSessionActivationListener
   > ```
-
-- 
+  
+- 统计应用场景。。。
