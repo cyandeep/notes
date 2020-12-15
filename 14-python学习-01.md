@@ -83,6 +83,7 @@ else:
 4.encode('charset') decode('charset',errors='ignore')
 5.len()
 6.format() eg. 'hello {0}'.format('cyan')
+7.enumerate(l) -- 将list转变为索引-元素对
 ```
 
 #### 8.2函数别名
